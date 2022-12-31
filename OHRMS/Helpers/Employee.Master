@@ -1,0 +1,303 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Employee.master.cs" Inherits="OHRMS.Helpers.Employee" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OHRMS - STI College Baliuag</title>
+    <link rel="icon" type="image/x-icon" href="<%=Page.ResolveUrl("~/UI/img/favicon.ico")%>" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <script src="/../UI/js/jquery.js"></script>
+    <script src="../UI/js/jquery-ui.js"></script>
+    <script src="/../UI/js/popper.js"></script>
+    <script src="/../UI/js/bootstrap.min.js"></script>
+    <script src="/../UI/js/mdb.min.js"></script>
+    <link href="/../UI/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../UI/css/jquery-ui.css" rel="stylesheet" />
+    <link href="/../UI/css/mdb.css" rel="stylesheet" />
+    <link href="/../UI/css/app-style.css" rel="stylesheet" />
+
+</head>
+
+
+<body class="hidden-sn light-blue-skin bg-img">
+
+    <form id="form1" runat="server">
+
+        <!--Double navigation-->
+        <header>
+            <!-- Sidebar navigation -->
+            <div id="slide-out" class="side-nav sn-bg-4">
+                <ul class="custom-scrollbar">
+                    <!-- Logo -->
+                    <li>
+                        <div class="logo-wrapper waves-light">
+                            <a href="<%=Page.ResolveUrl("~/Employees/Dashboard.aspx")%>">
+                                <img src="<%=Page.ResolveUrl("~/UI/img/ohrms-logo.png")%>" class="img-fluid flex-center"></a>
+                        </div>
+                    </li>
+                    <!--/. Logo -->
+                    <!--Social-->
+                    <li>
+                        <ul class="social">
+                            <li><a href="https://www.sti.edu/" target="_blank" class="icons-sm fb-ic"><i class="fab fa-internet-explorer"></i></a></li>
+                            <li><a href="https://www.facebook.com/baliuag.sti.edu" target="_blank" class="icons-sm fb-ic"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com/sticollege" target="_blank" class="icons-sm tw-ic"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/stidotedu/" target="_blank" class="icons-sm fb-ic"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://youtube.com/user/STIdotEdu" target="_blank" class="icons-sm fb-ic"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </li>
+                    <!--/Social-->
+                    <!-- Side navigation links -->
+                    <li class="dropdown-divider"></li>
+                    <li><a href="<%=Page.ResolveUrl("~/Employees/Dashboard.aspx")%>" class="collapsible-header waves-effect white-text"><i class="fas fa-home"></i>Dashboard</a></li>
+                    
+                    <li>
+                        <ul class="collapsible collapsible-accordion">
+                            <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i>Employee Details <i class="fas fa-angle-down rotate-icon"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/EmployeeProfile.aspx")%>" class="waves-effect">Profile</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employee/PersonalInfoSheet.aspx")%>" class="waves-effect">Personal Information</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employee/Checklist.aspx")%>" class="waves-effect">Requirements</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-hand-point-up"></i>
+                                Office Time Track<i class="fas fa-angle-down rotate-icon"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li  id="scheduleForm" runat="server" ><a href="<%=Page.ResolveUrl("~/Employees/ScheduleForm.aspx")%>" class="waves-effect">Schedule</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/EmployeeTimesheet.aspx")%>" class="waves-effect">Timesheet</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-eye"></i>Reminders<i class="fas fa-angle-down rotate-icon"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/AnnouncementList.aspx")%>" class="waves-effect">Announcement</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/MemorandumList.aspx")%>" class="waves-effect">Memorandum</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/TodoList.aspx")%>" class="waves-effect">To do</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-envelope"></i>Leave<i
+                                class="fas fa-angle-down rotate-icon"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/LeaveForm.aspx")%>" class="waves-effect">Leave Request Form</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/LeaveApplicationList.aspx")%>" class="waves-effect">Application Status</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li id ="approval" runat="server" ><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-envelope"></i>Approval<i
+                                class="fas fa-angle-down rotate-icon"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/LeaveApprove.aspx")%>" class="waves-effect">Leave Approval</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/COEList.aspx")%>" class="waves-effect">COE Approval</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-envelope"></i>Others<i
+                                class="fas fa-angle-down rotate-icon"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/COERequestForm.aspx")%>" class="waves-effect">COE Request Form</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/ResignationForm.aspx")%>" class="waves-effect">Resignation Form</a>
+                                        </li>
+                                        <li><a href="<%=Page.ResolveUrl("~/Employees/ClearanceForm.aspx")%>" class="waves-effect">Clearance Form</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--/. Side navigation links -->
+                </ul>
+                <div class="sidenav-bg mask-strong"></div>
+            </div>
+            <!--/. Sidebar navigation -->
+            <!-- Navbar -->
+            <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+                <!-- SideNav slide-out button -->
+                <div class="float-left">
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+                </div>
+                <!-- Breadcrumb-->
+                <div class="breadcrumb-dn mr-auto">
+                    <p>STI OHRMS</p>
+                </div>
+                <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            aria-expanded="false"><i class="fas fa-bell"></i><span class="badge badge-danger ml-2">
+                                <asp:ScriptManager ID="ScriptManager1" runat="server" />
+                                <asp:Timer ID="Timer1" runat="server" Interval="120000" OnTick="Timer1_Tick" />
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="Timer1" />
+                                    </Triggers>
+                                    <ContentTemplate>
+                                        <asp:Label ID="lblNotif" runat="server"></asp:Label>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </span></a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu">
+                            <asp:Repeater ID="rptrNotif" runat="server" OnItemCommand="rptrNotif_ItemCommand">
+                                <HeaderTemplate>
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <asp:LinkButton ID="lnkId" runat="server" type="button" Text="View" CommandArgument='<%# Eval("id") %>' CssClass="">
+                                                <h5>
+                                                    <asp:Label ID="chkisRead" runat="server" Text='<%# Eval("fullName") %>'></asp:Label>&nbsp;<span class="small text-muted"><asp:Label ID="lblDate" runat="server" Text='<%# Eval("dateTime") %>'></asp:Label></span></h5>
+                                                <span class="d-inline-block text-truncate" style="max-width: 50vw; min-width: 30vw;">
+                                                    <asp:Label ID="lblMessage" runat="server" Text='<%# Eval("message") %>' CssClass="text-muted text-truncate"></asp:Label></span>
+                                            </asp:LinkButton>
+                                        </li>
+                                        <li class="dropdown-divider"></li>
+                                    </ul>
+                                </ItemTemplate>
+                                <FooterTemplate>
+                                    <h6 class="text-warning">No new message(s).</h6>
+                                </FooterTemplate>
+                            </asp:Repeater>
+                            <div class="justify-content-end text-center">
+                                <asp:LinkButton ID="lnkView" runat="server" Text="See All" OnClick="lnkView_Click"></asp:LinkButton>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            aria-expanded="false"><i class="fas fa-user-alt"></i><asp:Label ID="lblEmployeeName" runat="server" Text="Name" CssClass=""></asp:Label></a>
+                        <ul class="dropdown-menu dropdown-menu-right dropdown-menu" aria-labelledby="navbarDropdown" style="width: 15vw">
+                            <li>Employee No.:&nbsp;<asp:Label ID="lblEmployeeNo" runat="server" Text="Emp_ID" CssClass=""></asp:Label>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li class="text-center">
+                                <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click" CssClass="btn btn-blue white-text">Logout</asp:LinkButton>
+                            </li>
+                        </ul>
+                        <%--<a class="nav-link"><i class="fas fa-sign-out"></i><span class="clearfix d-none d-sm-inline-block">Logout</span></a>--%>
+                        
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.Navbar -->
+        </header>
+        <!--/.Double navigation-->
+
+        <!--Main Layout-->
+        <main>
+            <div class="container-fluid min-vh-100">
+                <asp:ContentPlaceHolder ID="ContentBody" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </main>
+        <!--Main Layout-->
+
+    </form>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue darken-3">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-12 py-5">
+                    <div class="mb-5 flex-center">
+
+                        <!-- Official Site -->
+                        <a class="fb-ic" href="https://www.sti.edu/" target="_blank">
+                            <i class="fab fa-internet-explorer fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a class="fb-ic" href="https://www.facebook.com/baliuag.sti.edu" target="_blank">
+                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic" href="https://twitter.com/sticollege" target="_blank">
+                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic" href="https://www.instagram.com/stidotedu/" target="_blank">
+                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!--Youtube-->
+                        <a class="ins-ic" href="https://youtube.com/user/STIdotEdu" target="_blank">
+                            <i class="fab fa-youtube fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
+        </div>
+        <!-- Footer Elements -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2021 Copyright:
+    <a href="#">STI Baliuag OHRMS</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <script>
+        jQuery(document).ready(function () {
+            // SideNav Initialization
+            $(".button-collapse").sideNav();
+            $('.mdb-select').materialSelect();
+
+            $('.datepicker').datepicker({
+            });
+
+
+            // Navbar title adjust
+            $(window).resize(function () {
+                if ($(window).width() >= 1440) {
+                    $('.navbar .breadcrumb-dn').css('padding-left', '240px');
+                } else {
+                    $('.navbar .breadcrumb-dn').css('padding-left', '0');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+
+</body>
+</html>

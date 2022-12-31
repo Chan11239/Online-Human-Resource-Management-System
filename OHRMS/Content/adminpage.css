@@ -1,0 +1,621 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding-top: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+
+
+/*Dashboard Admin*/
+.dashboard-memo {
+    position: relative;
+    left: 25px;
+    width: 550px;
+    border: 1px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+}
+
+    .dashboard-memo h3 {
+        position: relative;
+        top: 5px;
+        left: 5px;
+    }
+
+    .dashboard-memo a {
+        position: relative;
+        float: right;
+        right: 10px;
+        padding: 3px 0;
+        top: -35px;
+    }
+
+.data {
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    left: 25px;
+    position: relative;
+    display: flex;
+}
+
+.dashboard-Announce {
+    position: relative;
+    left: 25px;
+    width: 550px;
+    border: 1px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+}
+
+    .dashboard-Announce h3 {
+        position: relative;
+        top: 5px;
+        left: 5px;
+    }
+
+    .dashboard-Announce a {
+        position: relative;
+        float: right;
+        right: 10px;
+        padding: 3px 0;
+        top: -35px;
+    }
+
+.side-admin {
+    position: relative;
+    top: -310px;
+    float: right;
+    right: 20px;
+}
+
+    .side-admin .side-calendar {
+        right: 15px;
+        width: 350px;
+        border: 1px solid;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+    }
+
+        .side-admin .side-calendar .calendar-admin {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 12px 16px;
+        }
+
+    .side-admin .side-todo {
+        right: 15px;
+        width: 350px;
+        border: 1px solid;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+    }
+
+        .side-admin .side-todo h3 {
+            position: relative;
+            top: 5px;
+            left: 5px;
+        }
+
+        .side-admin .side-todo a {
+            position: relative;
+            float: right;
+            right: 10px;
+            padding: 3px 0;
+            top: -35px;
+        }
+
+    .side-admin .side-dtr {
+        right: 15px;
+        width: 350px;
+        border: 1px solid;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+    }
+
+        .side-admin .side-dtr h3 {
+            position: relative;
+            top: 5px;
+            left: 5px;
+        }
+
+        .side-admin .side-dtr a {
+            position: relative;
+            float: right;
+            right: 10px;
+            padding: 3px 0;
+            top: -35px;
+        }
+
+.table-emp-admin {
+    position: relative;
+    width: 550px;
+    overflow: auto;
+    background: white;
+    border: 1px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    left: 25px;
+}
+
+    .table-emp-admin h3 {
+        position: relative;
+        top: 5px;
+        left: 5px;
+    }
+
+    .table-emp-admin a {
+        position: relative;
+        float: right;
+        right: 10px;
+        padding: 3px 0;
+        top: -35px;
+    }
+
+/*Announcement*/
+.table-announcement {
+    position: absolute;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    left: 50px;
+    width: 90%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+    .table-announcement label {
+        position: relative;
+        font-size: 18px;
+        font-weight: 900;
+        left: 50px;
+        font-family: Courier New, Courier, monospace;
+    }
+
+    .table-announcement .ddl-announce {
+        position: relative;
+        align-content: center;
+        border: none;
+        width: 75%;
+        font-size: 17px;
+        border-bottom: 1px solid;
+        left: 50px;
+        -webkit-appearance: none;
+        background-color: inherit;
+        font-family: Courier New, Courier, monospace;
+    }
+
+    .table-announcement .textbox-Announce-Descript {
+        position: relative;
+        align-content: center;
+        width: 75%;
+        font-size: 17px;
+        font-weight: 400;
+        left: 50px;
+        background-color: white;
+        height: 100px;
+        resize: none;
+        font-family: Courier New, Courier, monospace;
+    }
+
+    .table-announcement .textbox-Announce {
+        position: relative;
+        align-content: center;
+        width: 75%;
+        font-size: 17px;
+        font-weight: 400;
+        left: 50px;
+        background-color: white;
+        font-family: Courier New, Courier, monospace;
+    }
+
+    .table-announcement .datepick {
+        position: relative;
+        align-content: center;
+        width: 35%;
+        font-size: 17px;
+        font-weight: 400;
+        left: 50px;
+        background-color: white;
+        font-family: Courier New, Courier, monospace;
+    }
+
+    .table-announcement .button-submit-Announce {
+        position: relative;
+        float: right;
+        right: 50px;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 16px;
+        background-color: cyan;
+        border: 0;
+        outline: 0;
+        border-radius: 10px;
+    }
+
+        .table-announcement .button-submit-Announce:hover {
+            background-color: dodgerblue;
+            color: #ddd;
+            border: 0;
+        }
+
+    .table-announcement .gen-announce {
+        position: relative;
+        font-size: 18px;
+        font-weight: 900;
+        left: 50px;
+        font-family: Courier New, Courier, monospace;
+    }
+
+/*Memo*/
+.table-newMemo {
+    position: relative;
+    left: 20px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 90%;
+    border: 1px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+    .table-newMemo .textbox-Memo {
+        position: relative;
+        align-content: center;
+        width: 50%;
+        font-size: 17px;
+        font-weight: 400;
+        left: 50px;
+        background-color: white;
+        border: none;
+        border-bottom: 1px solid;
+    }
+
+    .table-newMemo .textbox-Memo-body {
+        position: relative;
+        align-content: center;
+        width: 65%;
+        font-size: 17px;
+        font-weight: 400;
+        left: 50px;
+        background-color: white;
+        height: 250px;
+        resize: none;
+    }
+
+    .table-newMemo .btnSubmit-memo {
+        position: relative;
+        float: right;
+        right: 50px;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 16px;
+        background-color: cyan;
+        border: 0;
+        outline: 0;
+        border-radius: 10px;
+    }
+
+        .table-newMemo .btnSubmit-memo:hover {
+            background-color: dodgerblue;
+            color: #ddd;
+            border: 0;
+        }
+
+/*List of Employee*/
+.header-records {
+    position: fixed;
+    display: flex;
+    border-radius: 10px;
+}
+
+    .header-records .nav {
+        width: 90%;
+        display: flex;
+        align-items: center;
+    }
+
+        .header-records .nav .search {
+            flex: 3;
+            justify-content: center;
+            display: flex;
+        }
+
+            .header-records .nav .search .textbox-search {
+                border: none;
+                background: #DCDCDC;
+                padding: 10px;
+                width: 450px;
+            }
+
+.content-records {
+    position: relative;
+    left: 25px;
+    text-align: center;
+}
+
+/*Employee Maintenance*/
+.empMaintenance-content {
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+    .empMaintenance-content h3 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .empMaintenance-content label {
+        position: relative;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .empMaintenance-content .textbox-EmpMaintenance {
+        position: relative;
+        font-size: 14px;
+        left: 25px;
+        border: none;
+        border-bottom: 1px solid;
+        width: 100%;
+    }
+
+    .empMaintenance-content .ddl-memo {
+        position: relative;
+        font-size: 14px;
+        left: 25px;
+        border: none;
+        width: 100%;
+        border: none;
+        -webkit-appearance: none;
+        border-bottom: 1px solid;
+    }
+
+    .empMaintenance-content .pass {
+        position: relative;
+        font-size: 14px;
+        left: 25px;
+        border: none;
+        border-bottom: 1px solid;
+        width: 100%;
+    }
+
+.Emp-Maintenance-button-add {
+    position: relative;
+    float: right;
+    right: 50px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: cyan;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+}
+
+    .Emp-Maintenance-button-add .btnSubmit-memo:hover {
+        background-color: dodgerblue;
+        color: #ddd;
+        border: 0;
+    }
+
+/*Employe Information*/
+nav {
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+    height: 50px;
+}
+    nav .btn-editsave {
+        float: right;
+        padding: 0 10px;
+        margin: 0 10px;
+    }
+    nav .button-switch {
+        border: none;
+        height: 100%;
+        padding: 0 0 5px 5px;
+        width: 200px;
+    }
+
+        nav .button-switch:hover {
+            background-color: dimgrey;
+        }
+
+.flex-container {
+    display: flex;
+}
+
+    .flex-container > div {
+        font-size: 24px;
+        margin: 25px;
+        padding: 30px;
+        font-family: 'Century Gothic';
+    }
+
+.profile-pic {
+    height: 175px;
+    width: 175px;
+}
+
+.label-info {
+    font-size: 14px;
+}
+
+.content-employee-info {
+    border: 1px solid;
+    width: 100%;
+    font-family: 'Century Gothic';
+}
+
+    .content-employee-info label {
+        font-size: 20px;
+        left: 10px;
+        position: relative;
+        font-weight: 400;
+    }
+    .content-employee-info .textbox-data {
+        font-size: 16px;
+        left: 10px;
+        position: relative;
+        color: blue;
+        border: none;
+        background-color: #dfe6e4;
+    }
+
+    .content-employee-info .label-data {
+        font-size: 16px;
+        left: 10px;
+        position: relative;
+        color: blue;
+    }
+
+    .content-employee-info .link-data {
+        font-size: 16px;
+        left: 10px;
+        position: relative;
+        color: blue;
+        text-decoration: none;
+    }
+
+/*Post Job*/
+.job-content {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    background: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+}
+
+    .job-content .pos {
+        position: relative;
+        left: 20px;
+    }
+
+    .job-content p {
+        position: relative;
+        left: 20px;
+        font-size: 25px;
+        font-weight: 500;
+        color: rgb(0, 191, 255);
+    }
+
+    .job-content .dropdown {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        -webkit-appearance: none;
+        width: 75%;
+        left: 50px;
+    }
+
+    .job-content .textbox-Job {
+        position: relative;
+        left: 50px;
+        width: 75%;
+    }
+
+    .job-content .textbox_desc {
+        position: relative;
+        width: 75%;
+        left: 50px;
+        height: 100px;
+        resize: none;
+    }
+
+    .job-content .button {
+        position: relative;
+        left: 20px;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+    }
+
+        .job-content .button:hover {
+            opacity: 0.8;
+        }
+
+.table-job {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+}
+
+
+#prevBtn {
+    background-color: #bbbbbb;
+}
+/* Hide all steps by default: */
+.tab {
+    display: none;
+}
+
+/*Applicant*/
+.content-applicant {
+    border: 1px solid #ccc;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+
+    .content-applicant h3 {
+        font-size: 22px;
+        position: relative;
+        left: 25px;
+    }
+
+
+    .content-applicant .new-applicant {
+        width: 100%;
+        position: relative;
+    }
+
+        .content-applicant .new-applicant h4 {
+            font-size: 18px;
+            position: relative;
+            left: 25px;
+            color: #0073ff;
+        }
+
+        .content-applicant .new-applicant label {
+            font-size: 14px;
+        }
+
+        .content-applicant .new-applicant .label-app {
+            font-size: 16px;
+            background-color: #c3c6c5;
+        }
+
+.separator {
+    height: 30px;
+}

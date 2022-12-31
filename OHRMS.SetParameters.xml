@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="OHRMS" />
+  <setParameter name="ConnectionStrings-Web.config Connection String" value="Server=localhost;Integrated Security=false;Database=ohrms;UserID=ohrms_user;Password=pass123$$;" />
+</parameters>

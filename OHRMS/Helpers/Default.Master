@@ -1,0 +1,211 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="OHRMS.Helpers.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>OHRMS - STI College Baliuag</title>
+    <link href="../Views/css/styles.css" rel="stylesheet" />
+</head>
+<body class="sb-nav-fixed">
+    <form id="form1" runat="server">
+
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="<%=Page.ResolveUrl("~/Admin/Dashboard.aspx")%>">
+                <img src="/../Images/ohrms-logo.png" alt="" height="40" />
+            </a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <%--<li><a class="dropdown-item" href="#!">Settings</a></li>--%>
+                            <%--<li><a class="dropdown-item" href="#!">Activity Log</a></li>--%>
+                            <%--<li><hr class="dropdown-divider" /></li>--%>
+                            <li>
+                                <asp:LinkButton ID="logout" runat="server" OnClick="Logout_Click" CssClass="dropdown-item">Logout</asp:LinkButton></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark bg-primary" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+
+                            <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/Dashboard.aspx")%>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Modules</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRecruitment" aria-expanded="false" aria-controls="collapseRecruitment">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Recruitment
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseRecruitment" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/PostJob.aspx")%>">Add job</a>
+                                    <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/Applicants.aspx")%>">Applicants</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmpRec" aria-expanded="false" aria-controls="collapseEmpRec">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Employee Records
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseEmpRec" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/Employeeinfo.aspx")%>">Employees</a>
+                                    <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/Dashboard.aspx")%>">Requirements</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAnnounce" aria-expanded="false" aria-controls="collapseAnnounce">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Announcements
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseAnnounce" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/Announcement/List.aspx")%>">General</a>
+                                    <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/Memorandum/List.aspx")%>">Memorandum</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTimesheets" aria-expanded="false" aria-controls="collapseTimesheets">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Timesheets
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseTimesheets" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="#!">Timesheets</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCOE" aria-expanded="false" aria-controls="collapseCOE">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Timesheets
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseCOE" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="#!">COE</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLeave" aria-expanded="false" aria-controls="collapseLeave">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Leave
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLeave" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="#!">Leave</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSeparation" aria-expanded="false" aria-controls="collapseSeparation">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Separation
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseSeparation" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="#!">Separation</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReports" aria-expanded="false" aria-controls="collapseReports">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Reports
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseReports" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/Reports.aspx")%>">Reports</a>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Tools</div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Utilities
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseUtilities" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="#!">Audit Trail</a>
+                                    <a class="nav-link" href="#!">Back up and Restore</a>
+                                    <a class="nav-link" href="#!">Archive</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMaintenance" aria-expanded="false" aria-controls="collapseMaintenance">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Maintenance
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseMaintenance" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<%=Page.ResolveUrl("~/Admin/EmployeeMaintenance.aspx")%>">Employee Maintenance</a>
+                                    <a class="nav-link" href="faqMaintenance.aspx">FAQ Maintenance</a>
+                                    <a class="nav-link" href="#!">Clearance Template</a>
+                                    <a class="nav-link" href="#!">Leave Template</a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">
+                            Logged in as:
+                            <asp:Label ID="lblEmp_Num" runat="server" Text="Emp_ID" CssClass=""></asp:Label>
+                        </div>
+                        <asp:Label ID="lblName_Emp" runat="server" Text="Name" CssClass=""></asp:Label>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4 shadow mb-5 mt-3">
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+                <footer class="footer mt-auto py-3 fixed-bottom justify-content-center text-center bg-primary">
+                    <div class="container">
+                        <span class="text-light small">Copyright &copy; 2021 STI Baliuag All Rights Reserved</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </form>
+
+    <script src="../Views/js/jquery.min.js"></script>
+    <script src="../Views/js/scripts.js"></script>
+    <script src="../Views/js/bootstrap.bundle.min.js"></script>
+    <script src="../Views/js/all.min.js"></script>
+
+</body>
+</html>

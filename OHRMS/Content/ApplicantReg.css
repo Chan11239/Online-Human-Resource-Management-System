@@ -1,0 +1,176 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding-top: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+}
+
+.show {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container-app {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../Images/251680035_3479258145634015_3860632700489444235_n.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3px 0;
+}
+
+.logo {
+    width: 110px;
+    height: 60px;
+    cursor: pointer;
+    left: 5px;
+    top: 0;
+    position: relative;
+    opacity: 1;
+}
+
+nav ul {
+    flex: 1;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+    nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 30px;
+    }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+        }
+
+.text-box {
+    color: #fff;
+    position: absolute;
+    bottom: 8%;
+    left: 50px;
+}
+
+    .text-box h1 {
+        font-size: 120px;
+        line-height: 140px;
+        margin-left: -10px;
+    }
+
+    .text-box h3 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+.reg-form {
+    display: none;
+    border: 1px solid #ccc;
+    height: 500px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50px;
+    background-color: #fff;
+}
+
+    .reg-form .right-side {
+        height: 100%;
+        width: 350px;
+        background-color: #0073ff;
+        float: left;
+    }
+
+    .reg-form .left-side {
+        text-align: center;
+        font-size: 19px;
+    }
+
+        .reg-form .left-side h4 {
+            font-size: 19px;
+            margin-top: 40px;
+            color: #90929e;
+        }
+
+        .reg-form .left-side .textbox-name {
+            border: none;
+            border-bottom: 1px solid;
+            width: 200px;
+        }
+
+            .reg-form .left-side .textbox-name:hover {
+                border-bottom: 2px solid;
+            }
+
+        .reg-form .left-side .textbox-other {
+            border: none;
+            border-bottom: 1px solid;
+            width: 425px;
+        }
+
+            .reg-form .left-side .textbox-other:hover {
+                border-bottom: 2px solid;
+            }
+
+.log-form {
+    display: none;
+    border: 1px solid #ccc;
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 19px;
+}
+
+    .log-form h3 {
+        margin-top: 40px;
+        color: #0073ff;
+        font-weight: 600;
+    }
+
+    .log-form .textbox-other {
+        border: none;
+        border-bottom: 1px solid;
+        width: 350px;
+    }
+
+        .log-form .textbox-other:hover {
+            border-bottom: 2px solid;
+        }

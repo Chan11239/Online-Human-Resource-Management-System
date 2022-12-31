@@ -1,0 +1,12 @@
+* Software needed to install *
+-Microsoft Visual Studio 2019
+-MySql WorkBench version 8.0.27
+-MySQL Server version 8.0.27
+-MySQL for Visual Studio version 1.2.10
+-Connector/NET version 8.0.27
+
+* How to set up * 
+1. Install the software needed.
+2. Open MySQL WorkBench and copy the dump file of Database (OHRMS -> UploadFiles -> Databases)
+3. Open the OHRMS.sln file
+4. Click the IIS Express or (F5) to Run the project

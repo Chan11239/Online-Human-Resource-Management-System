@@ -1,0 +1,225 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+
+    nav ul{
+        padding: 0;
+    }
+    h1{
+        font-size: 50px;
+    }
+}
+
+.show{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    /*background-image: url(../Images/HRMS_HR_Modules-02-scaled.jpg);*/
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 4px 0 rgba(0, 0, 0, 0.10);
+}
+
+.logo {
+    width: 110px;
+    height: 55px;
+    cursor: pointer;
+    left: 5px;
+    top: 0;
+    position: relative;
+}
+
+nav ul {
+    flex: 1;
+    text-align: right;
+    padding-right: 30px;
+}
+
+    nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 30px;
+    }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+        }
+
+            nav ul li a::after {
+                content: '';
+                width: 50%;
+                height: 3px;
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #fff;
+                transition: width 0.3s;
+            }
+
+            nav ul li a:hover::after {
+                width: 50%;
+            }
+
+
+.text-box {
+    color: #fff;
+    position: absolute;
+    bottom: 8%;
+    left: 50px;
+}
+
+    .text-box h1 {
+        font-size: 120px;
+        line-height: 140px;
+        margin-left: -10px;
+    }
+
+.text-box h3 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.loginButton_2 {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: rgb(36, 164, 214);
+    border: 0;
+    outline: 0;
+    position: center;
+}
+
+    .loginButton_2:hover, .loginButton_2:focus {
+        background-color: dodgerblue;
+        color: #ddd;
+        border: 0;
+    }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+    /* Modal Content */
+    .modal .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 33%;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+        .modal .modal-content .modal-header {
+            padding: 2px 14px;
+            background-color: rgb(36, 164, 214);
+            color: white;
+            text-align: center;
+        }
+
+        .modal .modal-content .modal-body {
+            padding: 2px 16px;
+        }
+
+            .modal .modal-content .modal-body .txtBox {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+
+        .modal .modal-content .modal-footer {
+            padding: 2px 16px;
+            background-color: white;
+            color: white;
+        }
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+.bg-def {
+    background-color: rgb(36, 164, 214);
+}

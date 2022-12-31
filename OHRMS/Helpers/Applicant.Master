@@ -1,0 +1,172 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Applicant.master.cs" Inherits="OHRMS.Helpers.Applicant" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OHRMS - STI College Baliuag</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <script src="/../UI/js/jquery.js"></script>
+    <script src="/../UI/js/popper.js"></script>
+    <script src="/../UI/js/bootstrap.min.js"></script>
+    <script src="/../UI/js/mdb.min.js"></script>
+    <link href="/../UI/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/../UI/css/mdb.css" rel="stylesheet" />
+    <link href="/../UI/css/app-style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-img">
+
+    <form id="form1" runat="server">
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar bg-primary">
+                <label id="lblUserName" runat="server"></label>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="<%=Page.ResolveUrl("~/default.aspx")%>">
+                        <img src="<%=Page.ResolveUrl("~/UI/img/ohrms-logo.png")%>" width="200" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+                        aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon white-text"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent-7">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                    aria-expanded="false"><i class="fas fa-bell white-text"></i><span class="badge badge-danger ml-2">
+                                <asp:ScriptManager ID="ScriptManager1" runat="server" />
+                                        <asp:Timer ID="Timer1" runat="server" Interval="120000" OnTick="Timer1_Tick" />
+                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="Timer1" />
+                                            </Triggers>
+                                            <ContentTemplate>
+                                                <asp:Label ID="lblNotif" runat="server"></asp:Label>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </span></a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu">
+                                    <asp:Repeater ID="rptrNotif" runat="server" OnItemCommand="rptrNotif_ItemCommand">
+                                        <HeaderTemplate>
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <a href="#">
+                                                        <h5>
+                                                            <asp:Label ID="chkisRead" runat="server" Text='<%# Eval("fullName") %>'></asp:Label>&nbsp;<span class="small text-muted"><asp:Label ID="lblDate" runat="server" Text='<%# Eval("dateTime","{0:dd/MMM/yyyy}") %>'></asp:Label></span></h5>
+                                                        <span class="d-inline-block text-truncate" style="max-width: 30vw">
+                                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("message") %>' CssClass="text-muted text-truncate"></asp:Label></span>
+                                                        <span class="d-inline-block text-truncate" style="max-width: 30vw">
+                                                            <asp:Label ID="lblTime" runat="server" Text='<%# Eval("setTime") %>' CssClass="text-muted text-truncate"></asp:Label></span>
+                                                        <span class="d-inline-block text-truncate" style="max-width: 30vw">
+                                                            <asp:Label ID="lblSetDate" runat="server" Text='<%# Eval("setDate","{0:dd/MMM/yyyy}") %>' CssClass="text-muted text-truncate"></asp:Label></span>
+                                                        <span class="d-inline-block text-truncate" style="max-width: 30vw">
+                                                            <asp:Label ID="lblPlace" runat="server" Text='<%# Eval("place") %>' CssClass="text-muted text-truncate"></asp:Label></span>
+                                                        <p class="text-center">
+                                                            <asp:LinkButton ID="lnkId" runat="server" type="button" Text="View" CommandArgument='<%# Eval("id") %>' CssClass="btn btn-blue btn-sm white-text"></asp:LinkButton>
+                                                        </p>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-divider"></li>
+                                                <li class="text-center">
+                                                    <asp:LinkButton ID="lnkView" runat="server" Text="See All" OnClick="lnkView_Click"></asp:LinkButton></li>
+                                            </ul>
+                                        </ItemTemplate>
+                                        <FooterTemplate>
+                                        </FooterTemplate>
+                                    </asp:Repeater>
+                                </div>
+                            </li>
+                            <li id="Li1" runat="server" class="nav-item">
+                                <a class="nav-link link-light white-text" href="<%=Page.ResolveUrl("~/FAQ.aspx")%>">FAQ</a>
+                            </li>
+                            <li id="lnkJob" runat="server" class="nav-item">
+                                <a class="nav-link link-light white-text" href="<%=Page.ResolveUrl("~/Applicants/JobListing.aspx")%>">Post Jobs</a>
+                            </li>
+                            <li id="lnkLogIn" runat="server" class="nav-item">
+                                <a class="nav-link link-light white-text" href="<%=Page.ResolveUrl("~/Applicants/Login.aspx")%>">Applicant Login</a>
+                            </li>
+                            <li id="lnkRegister" runat="server" class="nav-item">
+                                <a class="nav-link link-light white-text" href="<%=Page.ResolveUrl("~/Applicants/Registration.aspx")%>">Register</a>
+                            </li>
+                             <li id="lnkResume" runat="server" class="nav-item">
+                                <a class="nav-link link-light white-text" href="<%=Page.ResolveUrl("~/Applicants/ResumeWebsite.aspx")%>">Manage Resume</a>
+                            </li>
+                            <li id="lnkLogOut" runat="server" class="nav-item">
+                                <a class="nav-link link-light white-text" href="<%=Page.ResolveUrl("~/default.aspx?actions=logout")%>">Log-Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar -->
+        </header>
+
+        <div class="mt-5 py-5">
+            <%--<asp:ScriptManager ID="ScriptManagerBody" runat="server" />--%>
+            <asp:ContentPlaceHolder ID="ContentBody" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue darken-3">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-12 py-5">
+                    <div class="mb-5 flex-center">
+
+                        <!-- Official Site -->
+                        <a class="fb-ic" href="https://www.sti.edu/" target="_blank">
+                            <i class="fab fa-internet-explorer fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a class="fb-ic" href="https://www.facebook.com/baliuag.sti.edu" target="_blank">
+                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic" href="https://twitter.com/sticollege" target="_blank">
+                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic" href="https://www.instagram.com/stidotedu/" target="_blank">
+                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                        <!--Youtube-->
+                        <a class="ins-ic" href="https://youtube.com/user/STIdotEdu" target="_blank">
+                            <i class="fab fa-youtube fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
+        </div>
+        <!-- Footer Elements -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2021 Copyright:
+    <a href="#">STI Baliuag OHRMS</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
+</body>
+</html>
